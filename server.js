@@ -92,5 +92,8 @@ setInterval(()=>{
     gameState.cities[news.city].prices[news.product] += news.change;
     io.emit('news', news.text);
 },10000);
+const PORT = process.env.PORT || 3000;
 
-http.listen(3000, ()=>console.log('Sunucu çalışıyor: http://localhost:3000'));
+http.listen(PORT, () => {
+    console.log("Sunucu çalışıyor: " + PORT);
+});

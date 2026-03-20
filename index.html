@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif; /* Tüm yazılar Arial */
+        background-color: #f0f0f5; /* Hafif gri arka plan */
+        color: #222;
+        margin: 20px;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Verdana', sans-serif; /* Başlıklar farklı font */
+        color: #444;
+    }
+
+    #products div, #players div {
+        font-family: 'Courier New', monospace; /* Liste yazıları monospaced */
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    button {
+        font-family: 'Tahoma', sans-serif;
+        font-weight: bold;
+        padding: 5px 10px;
+        margin-left: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #cities button {
+        background-color: #28a745;
+        margin: 3px;
+    }
+
+    #cities button:hover {
+        background-color: #1e7e34;
+    }
+
+    #priceChart {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        margin-top: 10px;
+        padding: 5px;
+    }
+</style>
+<meta charset="UTF-8">
+<title>Ticaret Oyunu Online</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Ticaret Oyunu Online</h1>
+<p>Para: <span id="money"></span> ₺</p>
+
+<h2>Şehir Değiştir</h2>
+<div id="cities"></div>
+
+<h2>Ürünler</h2>
+<div id="products"><h2>Oyuncular</h2>
+<div id="players"></div>
+<h2>Fiyat Grafikleri</h2>
+<canvas id="priceChart" width="600" height="300"></canvas>
+
+<script src="game.js"></script>
+</body>
+</html>
